@@ -1,1 +1,121 @@
-# patotie-33
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patotie 🖤</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at center, #1a0008 0%, #000 70%);
+    font-family: 'Arial', sans-serif;
+    overflow:hidden;
+    color:white;
+}
+
+/* Background floating glow */
+body::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: radial-gradient(circle, rgba(255,0,70,0.15) 0%, transparent 70%);
+    animation: pulse 6s infinite alternate;
+}
+
+.card{
+    text-align:center;
+    position:relative;
+    z-index:2;
+    animation: fadeIn 2s ease;
+}
+
+.card img{
+    width:420px;
+    max-width:90%;
+    border-radius:18px;
+    box-shadow: 0 0 80px rgba(255,0,90,0.6);
+    animation: slowZoom 12s infinite alternate ease-in-out;
+}
+
+h1{
+    margin-top:25px;
+    font-size:38px;
+    letter-spacing:3px;
+    text-shadow:0 0 25px #ff004c;
+    animation: glow 3s infinite alternate;
+}
+
+.subtitle{
+    margin-top:10px;
+    font-size:16px;
+    letter-spacing:2px;
+    opacity:0.7;
+}
+
+button{
+    margin-top:30px;
+    padding:12px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ff004c;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+button:hover{
+    background:#ff2a6d;
+    transform:scale(1.1);
+    box-shadow:0 0 20px #ff004c;
+}
+
+@keyframes slowZoom{
+    from{ transform:scale(1); }
+    to{ transform:scale(1.05); }
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 15px #ff004c; }
+    to{ text-shadow:0 0 35px #ff2a6d; }
+}
+
+@keyframes pulse{
+    from{ opacity:0.3; }
+    to{ opacity:0.8; }
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic">
+    <source src="cauldron.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <img src="couple.png" alt="Patotie">
+    <h1>Patotie 🖤</h1>
+    <div class="subtitle">Cauldron of Thorns</div>
+    <button onclick="startLove()">Play Our Song 🎵</button>
+</div>https://on.soundcloud.com/cA3IgP0qQ5GKYqgBqf
+
+<script>
+function startLove(){
+    document.getElementById("bgMusic").play();
+}
+</script>
+
+</body>
+</html>
